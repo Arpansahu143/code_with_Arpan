@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>Hover Effect</title>
+    <style>
+        .container {
+            text-align: center; 
+        }
+
+        .sdiv {
+            font-size: 24px; 
+            color: black; 
+            margin: 20px; 
+            transition: color 0.3s; 
+        }
+
+        .image {
+            width: 300px; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto; 
+        }
+
+     
+        .image:hover + .sdiv {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="hover.png" alt="Hover over me" class="image">
+        <div class="sdiv">My Special Div</div>
+    </div>
+
+</body>
+</html>
