@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>jQuery</title>
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+
+.ll {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(42, 30, 30, 0.4); 
+}
+
+
+.con {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+.ll {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    text-decoration: none;
+}
+
+.ll:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+</style>
+<script>
+    $(document).ready(function() {
+        
+        $("#openPopupBtn").click(function() {
+            $("#ok").fadeIn();  
+        });
+    
+        
+        $(".close").click(function() {
+            $("#ok").fadeOut();  
+        });
+    
+        
+        $(window).click(function(event) {
+            if ($(event.target).is("#ok")) {
+                $("#ok").fadeOut();  
+            }
+        });
+    });
+    
+
+</script>
+<body>
+
+
+<button id="openPopupBtn">Open Popup</button>
+
+
+<div id="ok" class="ll">
+    <div class="con">
+        
+        <h2>This is a custom popup!</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat amet asperiores minima, libero magnam ea natus deleniti qui dignissimos fuga ad non?</p>
+    </div>
+</div>
+
+
+</body>
+</html>
