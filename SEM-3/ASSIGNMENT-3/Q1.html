@@ -3,67 +3,19 @@
 <head>
     <title>jQuerry</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-
-        .button-container {
-            margin-bottom: 20px;
-        }
-
-        .color-button, .toggle-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 5px;
-            cursor: pointer;
-        }
-
-        .color-button {
-            background-color: lightgray;
-            border: none;
-            transition: background-color 0.3s;
-        }
-
-        .color-button:hover {
-            background-color: #ddd;
-        }
-
-        .toggle-button {
-            background-color: lightcoral;
-            border: none;
-            transition: background-color 0.3s;
-        }
-
-        .toggle-button:hover {
-            background-color: #ff7f7f;
-        }
-
-        .box {
-            width: 200px;
-            height: 100px;
-            margin: 10px auto;
-            background-color: lightblue;
-            border: 2px solid #333;
-            text-align: center;
-            line-height: 100px;
-            font-size: 18px;
-        }
-    </style>
+    
     <script>
         $(document).ready(function() {
             
-            $("#redBtn").click(function() {
+            $("#r").click(function() {
                 $("body").css("background-color", "red");
             });
 
-            $("#blueBtn").click(function() {
+            $("#b").click(function() {
                 $("body").css("background-color", "blue");
             });
 
-            $("#greenBtn").click(function() {
+            $("#g").click(function() {
                 $("body").css("background-color", "green");
             });
 
@@ -77,13 +29,13 @@
 <body>
 
     <h1>change bg color and visibility</h1>
-    <div class="button-container">
-        <button class="color-button" id="redBtn">Red</button>
-        <button class="color-button" id="blueBtn">Blue</button>
-        <button class="color-button" id="greenBtn">Green</button>
+    <div>
+        <button class="color-button" id="r">Red</button>
+        <button class="color-button" id="b">Blue</button>
+        <button class="color-button" id="g">Green</button>
     </div>
 
-    <button class="toggle-button" id="btn">Toggle /Div Visibility</button>
+    <button  id="btn">Toggle /Div Visibility</button>
 
 
     <div class="box">Box 1</div>
