@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>Animation</title>
+    <style>
+        #myDiv {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(74, 162, 192);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+
+            $('#start').click(function() {
+                    $('#myDiv').animate({
+                        top: '400px'
+                    }, 2000);
+                
+            });
+
+            $('#stop').click(function() {
+               
+                    $('#myDiv').stop(); 
+                    
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <div id="myDiv"></div>
+
+    
+</body>
+</html>
