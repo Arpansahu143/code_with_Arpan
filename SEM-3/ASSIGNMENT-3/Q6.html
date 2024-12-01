@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>jQuery Class insertion and deletion</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .h {
+            background-color: yellow;
+        }
+
+        .dim {
+            opacity: 0.3;
+        }
+
+        #ok {
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 200px;
+        }
+        
+        button {
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            
+            $("#hlght").click(function(){
+                
+                $("#ok").removeClass("dim");
+               
+                $("#ok").addClass("h");
+            });
+
+            
+            $("#dim").click(function(){
+               
+                $("#ok").removeClass("h");
+                
+                $("#ok").addClass("dim");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h1>Click a Button to Change the Style</h1><div> 
+
+    <button id="hlght">Add Highlight</button>
+    <button id="dim">Add Dim</button>
+
+    <div id="ok">This is a div</div>
+
+    
+
+</body>
+</html>
