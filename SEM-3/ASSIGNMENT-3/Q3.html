@@ -4,7 +4,7 @@
     
     <title>Animation</title>
     <style>
-        #myDiv {
+        #ok {
             width: 100px;
             height: 100px;
             background-color: rgb(74, 162, 192);
@@ -15,16 +15,16 @@
         $(document).ready(function() {
             
 
-            $('#start').click(function() {
-                    $('#myDiv').animate({
-                        top: '400px'
+            $("#s").click(function() {
+                    $("#ok").animate({
+                        marginTop: '400px'
                     }, 2000);
                 
             });
 
-            $('#stop').click(function() {
+            $("#st").click(function() {
                
-                    $('#myDiv').stop(); 
+                    $("#ok").stop(); 
                     
                 
             });
@@ -32,9 +32,9 @@
     </script>
 </head>
 <body>
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
-    <div id="myDiv"></div>
+    <button id="s">Start</button>
+    <button id="st">Stop</button>
+    <div id="ok"></div>
 
     
 </body>
