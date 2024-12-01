@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Remove Element by ID</title>
+    
+    <style>
+     
+
+        .ok {
+            margin-top: 20px;
+        }
+
+        .con{
+            padding: 10px;
+            margin: 5px 0;
+            background-color: cyan;
+            border: 1px solid black;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#r").click(function () {
+
+                var x = $("#eid").val();
+
+                $("#" + x).remove();
+
+                $("#eid").val("");
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1>Remove Element by ID</h1>
+
+
+    <div>
+        <input type="text" id="eid" placeholder="Enter ID to remove">
+        <button id="r">Remove Element</button>
+    </div>
+
+
+    <div class="ok">
+        <div class="con" id="p1">
+            <p>ID "p1".</p>
+        </div>
+        <div class="con" id="p2">
+            <p>ID "p2".</p>
+        </div>
+        <div class="con" id="p3">
+            <p>ID "p3".</p>
+        </div>
+        <div class="con" id="p4">
+            <p>ID "p4".</p>
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>
