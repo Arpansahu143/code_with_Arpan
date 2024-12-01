@@ -17,16 +17,16 @@
         $(document).ready(function(){
             $("button").click(function(){
            
-            $("<h2>List of Topics Covered</h2>").insertBefore("#topics");
+            $("<h2>List of Topics Covered</h2>").insertBefore("#t");
 
             
-            $("#topics").append("<li>CSS</li>");
+            $("#t").append("<li>CSS</li>");
 
             
-            $("#topics").prepend("<li>Introduction to Full Stack Development</li>");
+            $("#t").prepend("<li>Introduction to Full Stack Development</li>");
 
             
-            $("<p>new topics added</p>").insertAfter("#topics");
+            $("<p>new topics added</p>").insertAfter("#t");
         });
     })
     </script>
@@ -36,7 +36,7 @@
     <h1>Manipulate Unordered List</h1>
 
     
-    <ul id="topics">
+    <ul id="t">
         <li>Getting Started with Full Stack</li>
         <li>HTML</li>
         <li>CSS</li>
