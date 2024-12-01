@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Q7- student data table</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            $("#rbtn").click(function () {
+
+                var name = $("#Name").val();
+                var age = $("#Age").val();
+                var grade = $("#Grade").val();
+
+
+                if (name === " " || age === " " || grade === " ") {
+                    alert("sab fill karo bro");
+                    return;
+                }
+
+
+                var x = "<tr><td>" + name + "</td><td>" + age + "</td><td>" + grade + "</td></tr>";
+
+
+                $("#stble tbody").append(x);
+
+
+                $("#Name").val("");
+                $("#Age").val("");
+                $("#Grade").val("");
+            });
+
+
+            $("#cbtn").click(function () {
+
+                $("#stble td").css("color", "red");
+            });
+
+        });
+    </script>
+    <style>
+        
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Data</h1>
+
+
+    <div>
+        <input type="text" id="Name" placeholder="Student Name" />
+        <input type="text" id="Age" placeholder="Age" />
+        <input type="text" id="Grade" placeholder="Grade" />
+        <button id="rbtn">Add Row</button>
+    </div>
+<br>
+    <button id="cbtn">Change Color</button>
+
+
+    <table id="stble">
+        
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+        
+        
+    </table>
+
+    
+
+</body>
+
+</html>
