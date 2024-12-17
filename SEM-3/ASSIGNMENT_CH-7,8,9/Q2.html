@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #a5a4a4;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #e6f7ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Student Information</h2>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <form class="form-inline" action="/action_page.php">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search by name or regd">
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+        </nav>
+        <br>
+        <table class="table  text-center" id="stable">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Semester</th>
+                    <th>Registration Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>swarup Das</td>
+                    <td>20</td>
+                    <td>3</td>
+                    <td>2341004102</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+                        <button class="btn btn-danger btn-sm del-btn">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Aurobindo rathsharma</td>
+                    <td>20</td>
+                    <td>3</td>
+                    <td>2341019369</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+                        <button class="btn btn-danger btn-sm del-btn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+        $(document).on('click', '.edit-btn', function () {
+            let row = $(this).closest('tr');
+            let name = prompt('Enter new name:', row.find('td:eq(0)').text());
+            let age = prompt('Enter new age:', row.find('td:eq(1)').text());
+            let sem = prompt('Enter new sem:', row.find('td:eq(2)').text());
+            let regNo = prompt('Enter new regd no.:', row.find('td:eq(3)').text());
+
+            if (name && age && sem && regNo) {
+                row.find('td:eq(0)').text(name);
+                row.find('td:eq(1)').text(age);
+                row.find('td:eq(2)').text(sem);
+                row.find('td:eq(3)').text(regNo);
+            } else {
+                alert('All fields are required!');
+            }
+        });
+
+
+        $(document).on('click', '.del-btn', function () {
+            if (confirm('Are you sure you want to delete this row?')) {
+                $(this).closest('tr').remove();
+            }
+        });
+
+
+
+    </script>
+    <script src="Q3.js"></script>
+</body>
+
+</html>
