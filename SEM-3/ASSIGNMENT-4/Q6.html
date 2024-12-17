@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+      $("#uploadBtn").click(function () {
+
+        $("#progressBars").fadeIn();
+
+       
+        function animateProgressBar(id, callback) {
+          let width = 0;
+          const interval = setInterval(function () {
+            width++;
+            $(id).css("width", width + "%");
+            if (width >= 100) {
+              clearInterval(interval);
+              if (callback) callback();
+            }
+          }, 100); 
+        }
+
+        animateProgressBar("#progressBar1", function () {
+          animateProgressBar("#progressBar2", function () {
+            animateProgressBar("#progressBar3", function () {
+              animateProgressBar("#progressBar4");
+            });
+          });
+        });
+      });
+    });
+  </script>
+<body>
+    
+    <div class="container mt-5">
+        <h2 class="text-center">Animated Progress Bars</h2>
+        <button id="uploadBtn" class="btn btn-primary btn-block mb-4">Upload File</button>
+    
+       
+        <div id="progressBars" style="display: none;">
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%;" id="progressBar1"></div>
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 0%;" id="progressBar2"></div>
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 0%;" id="progressBar3"></div>
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 0%;" id="progressBar4"></div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
