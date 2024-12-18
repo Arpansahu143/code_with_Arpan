@@ -39,7 +39,10 @@
     <script>
         $(document).ready(function() {
             $('#lfm').on('submit', function(event) {
+
+                <!-- For example:Prevent a submit button from submitting a form -->
                 event.preventDefault();
+
                 const pass = $('#pass').val();
                 const emsg = $('#emsg');
                 const reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
