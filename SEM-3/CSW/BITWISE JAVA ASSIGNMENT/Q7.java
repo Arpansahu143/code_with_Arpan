@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Q7 {
 public static void main(String[] args) {
 Scanner scanner = new Scanner(System.in);
-System.out.print("Enter the base a (x): ");
+System.out.print("Enter the base (x): ");
 double x = scanner.nextDouble();
 System.out.print("Enter the exponent (y): ");
 int y = scanner.nextInt();
