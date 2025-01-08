@@ -1,15 +1,21 @@
 public class Q2 {
     public static void main(String[] args) {
         int number = 29; // Example number
-        System.out.println("Parity of " + number + " is: " + calculateParity(number));
-    }
+        int count = 0;
 
-    public static int calculateParity(int n) {
-        int parity = 0;
-        while (n > 0) {
-            parity ^= (n & 1); // Flip parity if the last bit is 1
-            n >>= 1;           // Right shift the number by 1
+        while (number > 0) { // Loop until all bits are processed
+            int x = number & 1; // Get the last bit
+            number >>= 1;       // Right shift the number
+            if (x == 1) {
+                count++; // Increment count if the bit is 1
+            }
         }
-        return parity; // 0 for even number of 1s, 1 for odd number of 1s
+
+        // Check if the count of 1s is even or odd
+        if (count % 2 == 0) {
+            System.out.println("0"); // Even parity
+        } else {
+            System.out.println("1"); // Odd parity
+        }
     }
 }
