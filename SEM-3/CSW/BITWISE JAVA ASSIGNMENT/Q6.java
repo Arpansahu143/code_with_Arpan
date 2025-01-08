@@ -1,7 +1,7 @@
 public class Q6 {
     public static int divide(int x, int y) {
         if (y == 0) {
-            throw new ArithmeticException("Division by zero is not allowed.");
+            return -1;
         }
 
         // Handle sign of the quotient
@@ -32,14 +32,16 @@ public class Q6 {
     }
 
     public static void main(String[] args) {
-        int x = 43;
-        int y = -8;
+        int x = 48;
+        int y = -12;
+int result=divide(x,y);
+      
 
-        try {
-            int result = divide(x, y);
-            System.out.println("Result: " + result);
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
-        }
+if(result==-1){
+    System.out.println("Error: Division by zero is not allowed");
+}
+else{
+    System.out.println("Result: " + result);
+}
     }
 }
