@@ -3,32 +3,29 @@ import java.util.Scanner;
 public class Q16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Integer largest = null;
-        Integer smallest = null;
-        while (true) {
-            System.out.print("Enter a number (or type 'exit' to finish): ");
-            String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("exit")) {
-                break;
+        int largest = Integer.MIN_VALUE;
+        int smallest = Integer.MAX_VALUE;
+        char choice;
+
+        do {
+            System.out.print("Enter a number: ");
+            int number = scanner.nextInt();
+
+            // Update largest and smallest values
+            if (number > largest) {
+                largest = number;
             }
-            try {
-                int number = Integer.parseInt(input);
-                if (largest == null || number > largest) {
-                    largest = number;
-                }
-                if (smallest == null || number < smallest) {
-                    smallest = number;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid number.");
+            if (number < smallest) {
+                smallest = number;
             }
-        }
-        if (largest != null && smallest != null) {
-            System.out.println("Largest number entered: " + largest);
-            System.out.println("Smallest number entered: " + smallest);
-        } else {
-            System.out.println("No numbers were entered.");
-        }
-        scanner.close();
+
+            // Prompt user to continue or stop
+            System.out.print("Do you want to enter another number? (y/n): ");
+            choice = scanner.next().charAt(0);
+        } while (choice == 'y' || choice == 'Y');
+
+        // Display the results
+        System.out.println("Largest number entered: " + largest);
+        System.out.println("Smallest number entered: " + smallest);
     }
 }
