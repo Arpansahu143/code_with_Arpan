@@ -1,20 +1,23 @@
 public class Q8 {
     public static int reverse(int number) {
         int reversed = 0;
+        int sign = number < 0 ? -1 : 1;
+        number = Math.abs(number);
 
         while (number != 0) {
-            int digit = number % 10; // Get the last digit
-            reversed = reversed * 10 + digit; // Append the digit to the reversed number
-            number /= 10; // Remove the last digit from the original number
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number /= 10;
         }
 
-        return reversed;
+        return reversed * sign;
     }
 
     public static void main(String[] args) {
-        int number = 12345;
+        int input1 = 123;
+        int input2 = -245;
 
-        int reversedNumber = reverse(number);
-        System.out.println("The reverse of " + number + " is " + reversedNumber);
+        System.out.println("Reversed " + input1 + " is: " + reverse(input1)); // Outputs: 321
+        System.out.println("Reversed " + input2 + " is: " + reverse(input2)); // Outputs: -542
     }
 }
