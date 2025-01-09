@@ -1,16 +1,20 @@
+import java.util.Scanner;
+
 public class Q12 {
     public static void main(String[] args) {
-        // Custom input numbers
-        int num1 = 1234; // Replace with the first number as needed
-        int num2 = 56789; // Replace with the second number as needed
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first integer number: ");
+        int firstNumber = scanner.nextInt();
+        System.out.print("Enter the second integer number: ");
+        int secondNumber = scanner.nextInt();
+        int combinedNumber = createCombinedNumber(firstNumber, secondNumber);
+        System.out.println("The combined number is: " + combinedNumber);
+        scanner.close();
+    }
 
-        // Extract the last two digits of the second number
-        int lastTwoDigits = num2 % 100;
-
-        // Create the third number
-        int thirdNumber = Integer.parseInt(num1 + String.valueOf(lastTwoDigits));
-
-        System.out.println("The third number created is: " + thirdNumber);
+    public static int createCombinedNumber(int first, int second) {
+        int firstTwoDigits = Math.abs(first) / (int) Math.pow(10, (int) Math.log10(Math.abs(first)) - 1);
+        int lastTwoDigits = Math.abs(second) % 100;
+        return firstTwoDigits * 100 + lastTwoDigits;
     }
 }
-
