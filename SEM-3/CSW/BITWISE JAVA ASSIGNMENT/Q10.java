@@ -9,8 +9,7 @@ public class Q10 {
         float num2 = scanner.nextFloat();
         float epsilon = 0.0001f; // You can adjust this value as needed, but it should be less than 1
 
-        boolean isDifferenceLessThanEpsilon = isDifferenceLessThanEpsilon(num1, num2,
-                epsilon);
+        boolean isDifferenceLessThanEpsilon = isDifferenceLessThanEpsilon(num1, num2,epsilon);
         if (isDifferenceLessThanEpsilon) {
             System.out.println("The difference between " + num1 + " and " + num2 + " is less than " + epsilon + ".");
         } else {
