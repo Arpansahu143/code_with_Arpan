@@ -47,7 +47,7 @@
                 const emsg = $('#emsg');
                 const reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
 
-                if (!reg.test(pass)) {
+                if (pass==reg) {
                     emsg.text(" recheck pass. buddy");
                 } else {
                     alert("Logged In");
