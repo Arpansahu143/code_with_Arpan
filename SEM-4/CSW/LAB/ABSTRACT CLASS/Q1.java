@@ -9,7 +9,6 @@ class Circle extends Shape {
         this.radius = radius;
     }
 
-   
     double calculateArea() {
         return Math.PI * radius * radius;
     }
@@ -23,7 +22,6 @@ class Rectangle extends Shape {
         this.width = width;
     }
 
-    
     double calculateArea() {
         return length * width;
     }
@@ -31,12 +29,11 @@ class Rectangle extends Shape {
 
 public class Q1 {
     public static void main(String[] args) {
-        
+
         Shape circle = new Circle(5);
         Shape rectangle = new Rectangle(4, 6);
         System.out.println("Circle Area: " + circle.calculateArea());
         System.out.println("Rectangle Area: " + rectangle.calculateArea());
 
-       
     }
 }
