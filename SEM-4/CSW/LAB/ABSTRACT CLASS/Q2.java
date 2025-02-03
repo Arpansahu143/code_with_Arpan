@@ -13,7 +13,7 @@ class FixedDeposit extends Bank {
     
     double calculateInterest(double amt, double rate, int yrs) {
         return amt * Math.pow((1 + rate / 100), yrs) - amt;
-    }
+    } 
 }
 
 public class Q2 {
